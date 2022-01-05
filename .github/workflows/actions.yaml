@@ -1,0 +1,17 @@
+name: Actions workflow
+
+on: [push]
+
+jobs:
+  runs-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        # how to provide an input for an action? with 'with'
+        with:
+          who-to-greet: Amanda
+      - name: Log Greeting Time
+        # action can also produce outputs - acessing the time 
+        run: echo "${{ steps.greet.outputs.time }}"
