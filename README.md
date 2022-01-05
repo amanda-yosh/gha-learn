@@ -23,3 +23,12 @@ It can be `linux`, `windows`, `MacOS`, or a `Docker Container`
 
 
 The machine can be either a GitHub-hosted runner, or a self-hosted runner.
+
+## Runner
+A runner is any machine with GitHub Actions runner aplication instaled.
+
+
+It is responsible for runnig the jobs when an event ocurrs and display back the results.
+
+
+It can be hosted by GitHub or you can host your own runner. The ones hosted by GitHub are maintained by then, it can be a `linux`, `windows` or `MacOS` virtual enviroment, but you cannot customize the hardware configuration.
