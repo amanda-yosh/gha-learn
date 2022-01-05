@@ -1,6 +1,6 @@
 name: Actions workflow
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   runs-github-actions:
@@ -10,6 +10,12 @@ jobs:
         run: |
           pwd
           ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo ${{ github.token }}
+        # git clone git@github:$GITHUB_REPOSITORY
+        # git checkout $GITHUB_SHA - commit id
       - name: Checkout
         uses: actions/checkout@v1
       - name: List Files After Checkout
